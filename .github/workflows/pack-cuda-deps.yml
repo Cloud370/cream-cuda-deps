@@ -66,11 +66,12 @@ jobs:
           python3 << 'PYEOF'
           import zipfile, os, shutil, glob
 
+          # wheel 文件名用下划线: nvidia_cuda_runtime_cu12-*.whl
           PATTERNS = {
-              "nvidia-cuda-runtime": ["cudart64"],
-              "nvidia-cublas": ["cublas64", "cublasLt64"],
-              "nvidia-cufft": ["cufft64"],
-              "nvidia-cudnn": ["cudnn"],
+              "nvidia_cuda_runtime": ["cudart64"],
+              "nvidia_cublas": ["cublas64", "cublasLt64"],
+              "nvidia_cufft": ["cufft64"],
+              "nvidia_cudnn": ["cudnn"],
           }
 
           for whl_path in glob.glob("wheels/*.whl"):
